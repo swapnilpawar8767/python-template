@@ -9,8 +9,14 @@ if [ ! -d "venv" ]; then
     echo "✅ Virtual environment created."
 fi
 
-# Activate virtual environment
-source venv/bin/activate || . venv/Scripts/activate
+# Detect OS and activate virtual environment
+if [[ "$OS" == "Windows_NT" ]]; then
+    echo "⚡ Activating Windows virtual environment..."
+    source venv/Scripts/activate
+else
+    echo "⚡ Activating Linux/Mac virtual environment..."
+    source venv/bin/activate
+fi
 
 # Upgrade pip
 pip install --upgrade pip
