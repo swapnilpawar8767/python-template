@@ -3,7 +3,11 @@ def main():
 
 
 def unused_function(param1, param2):
-    pass  # This function is never used, Flake8 will complai
+    unused_var = 10  # This variable is unused (Flake8 will catch it)
+
+
+def add(a, b):
+    return a + b
 
 
 if __name__ == "__main__":
