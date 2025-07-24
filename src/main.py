@@ -1,4 +1,3 @@
-# test pre-commit hook
 def main():
     print("🚀 Python Template Project is ready!")
 
