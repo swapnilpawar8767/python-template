@@ -1,30 +1,37 @@
 #!/bin/bash
-set -e
-
 echo "🚀 Starting project setup..."
 
-# Create virtual environment if not exists
+# Step 1: Create virtual environment
 if [ ! -d "venv" ]; then
+    echo "✅ Creating virtual environment..."
     python -m venv venv
-    echo "✅ Virtual environment created."
+else
+    echo "⚡ Virtual environment already exists."
 fi
 
-# Detect OS and activate virtual environment
+# Step 2: Activate virtual environment (Windows vs Unix)
 if [[ "$OS" == "Windows_NT" ]]; then
     echo "⚡ Activating Windows virtual environment..."
     source venv/Scripts/activate
 else
-    echo "⚡ Activating Linux/Mac virtual environment..."
+    echo "⚡ Activating Unix virtual environment..."
     source venv/bin/activate
 fi
 
-# Upgrade pip
-pip install --upgrade pip
+# Step 3: Upgrade pip safely
+echo "⬆️ Upgrading pip..."
+python -m pip install --upgrade pip || echo "⚠️ Pip upgrade failed, continuing..."
 
-# Install dependencies
-pip install -r requirements.txt
+# Step 4: Install dependencies
+if [ -f "requirements.txt" ]; then
+    echo "📦 Installing dependencies..."
+    pip install -r requirements.txt
+else
+    echo "⚠️ requirements.txt not found!"
+fi
 
-# Setup pre-commit hooks
+# Step 5: Install pre-commit hooks
+echo "🔧 Installing pre-commit hooks..."
 pre-commit install
 
 echo "🎉 Setup complete! You can now start coding."
