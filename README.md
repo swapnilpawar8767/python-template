@@ -1,14 +1,16 @@
 # python-template
 # Python Template Repository
 
-This repository is a **starter template for Python projects** with best practices:
-- Pre-configured **linters** (Flake8, Black).
-- **Pre-commit hooks** for code quality checks.
-- **Docker & docker-compose** setup.
-- **Tests** using `pytest`.
-- **GitHub Actions (CI)** for automated testing.
-- Standard project structure (src/, tests/).
-- Ready-to-use **start.sh** script for setup.
+This repository is a **starter template for Python projects** with pre-configured best practices:
+- **Code formatting** using [Black](https://github.com/psf/black).
+- **Linting** using [Flake8](https://github.com/PyCQA/flake8).
+- **Pre-commit hooks** for automated code checks before every commit.
+- **Testing** using [Pytest](https://pytest.org/).
+- **Docker & docker-compose** setup for containerized environments.
+- **GitHub Actions (CI)** for automated tests.
+- Standard Python **project structure (src/, tests/)**.
+- Ready-to-use **`start.sh`** script to set up your environment quickly.
+
 
 ---
 
