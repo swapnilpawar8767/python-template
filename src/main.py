@@ -2,8 +2,8 @@ def main():
     print("🚀 Python Template Project is ready!")
 
 
-def unused_function(param1, param2):
-    unused_var = 10  # This variable is unused (Flake8 will catch it)
+# def unused_function(param1, param2):
+#     unused_var = 10  # This variable is unused (Flake8 will catch it)
 
 
 def add(a, b):
