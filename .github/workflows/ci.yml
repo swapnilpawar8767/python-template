@@ -1,4 +1,4 @@
-name: CI & Docker Push to GHCR
+name: CI Pipeline
 
 on:
   push:
@@ -11,10 +11,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      packages: write
 
     steps:
       # Step 1: Checkout the code
@@ -47,21 +43,4 @@ jobs:
       - name: Run tests
         run: |
           pytest
-
-      # Step 7: Log in to GitHub Container Registry (GHCR)
-      - name: Log in to GHCR
-        uses: docker/login-action@v3
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-
-      # Step 8: Build Docker image
-      - name: Build Docker image
-        run: |
-          docker build -t ghcr.io/${{ github.actor }}/python-template:latest .
-
-      # Step 9: Push Docker image to GHCR
-      - name: Push Docker image
-        run: |
-          docker push ghcr.io/${{ github.actor }}/python-template:latest
+  
