@@ -18,3 +18,4 @@ echo "🚀 Starting container using docker-compose..."
 docker compose up -d
 
 echo "✅ Deployment complete."
+
