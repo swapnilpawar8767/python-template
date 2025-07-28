@@ -1,5 +1,5 @@
 def main():
-    print("🚀 Python Template Project is ready!")
+    print("🚀 Python Template Project is ready! v2")
 
 
 # def unused_function(param1, param2):
