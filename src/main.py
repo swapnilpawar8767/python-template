@@ -7,6 +7,6 @@ def main():
 
 def add(a, b):
     return a + b
-tt
+
 if __name__ == "__main__":
     main()
