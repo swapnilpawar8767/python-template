@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "🚀 Python Template Project is ready! v2"
+    return "🚀 Python Template Project is ready!"
 
 
 if __name__ == "__main__":
